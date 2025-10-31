@@ -1,17 +1,19 @@
 "use client";
 
 import { startLogin } from "../auth/authentication";
+import styles from './page.module.css';
+import { Button } from "@/components/ui/button";
+import { Inter } from 'next/font/google';
+
+const inter = Inter({ weight: '700', subsets: ['latin'] });
 
 export default function LoginPage() {
   return (
-    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", marginTop: 80 }}>
-      <h1>Sign in with Solid</h1>
-      <button
-        className="mt-6 rounded-full bg-blue-600 px-6 py-3 text-white font-semibold hover:bg-blue-700 transition-colors"
-        onClick={() => startLogin()}
-      >
-        Login with Solid
-      </button>
+    <div className={styles.loginPage}>
+      <div className={styles.loginPanel}>
+        <h1 className={`${styles.heading} ${inter.className}`}>Verbind je erfgoedpaspoort</h1>
+        <Button className={styles.loginButton} onClick={startLogin}>Verbind met mijn pod</Button>
+      </div>
     </div>
   );
 }

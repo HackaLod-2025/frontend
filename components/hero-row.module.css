@@ -15,6 +15,7 @@
 	grid-column: span 12 / span 12;
 	overflow: hidden;
 	border-radius: 1rem;
+	padding: 24rem calc(.25rem * 4) calc(.25rem * 8) calc(.25rem * 4);
 	color: var(--color-white);
 	background: var(--primary-dark);
 }
@@ -34,6 +35,17 @@
 	-webkit-text-fill-color: transparent;
 }
 
+.heroDescription {
+	margin-top: calc(.25rem * 2);
+	font-size: 1.125rem;
+	line-height: 1.75rem;
+	color: var(--color-white, #FFFFFF);
+}
+
+.heroAside {
+	display: none;
+}
+
 @media (min-width: 48rem) {
 	.heroRowInner {
 		grid-template-columns: repeat(12, minmax(0, 1fr));
@@ -48,6 +60,16 @@
 	.heroArticle {
 		grid-column: span 7 / span 7;
 		padding-top: 24rem;
+	}
+
+	.heroAside {
+		display: flex;
+		min-height: 260px;
+		border-radius: 1rem;
+		background-color: var(--color-zinc-900);
+		padding: 0;
+		overflow: hidden;
+		grid-column: span 5 / span 5;
 	}
 }
 

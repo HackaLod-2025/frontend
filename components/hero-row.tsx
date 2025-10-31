@@ -18,12 +18,12 @@ const HeroRow = ({
     <section aria-label="Hero" className={styles.heroRow}>
       <div className={`${styles.heroRowInner} ${styles.featureOne}`}>
         <article className={styles.heroArticle}>
-          <p className="text-sm uppercase tracking-widest text-emerald-300/80 font-semibold">
-            {description}
-          </p>
           <h1 className={styles.heroTitle}>
             {title}
           </h1>
+          <p className={styles.heroDescription}>
+            {description}
+          </p>
           <div className="mt-6">
             <Button className={styles.ctaButton} onClick={onCtaClick}>
               {ctaLabel}
@@ -36,7 +36,7 @@ const HeroRow = ({
           />
         </article>
 
-        <aside className="lg:col-span-5 rounded-2xl bg-zinc-900 p-0 overflow-hidden min-h-[260px]">
+        <aside className={styles.heroAside}>
           <Illustration />
         </aside>
       </div>

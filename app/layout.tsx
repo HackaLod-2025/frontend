@@ -2,18 +2,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
-import { MainMenu } from "@/components/main-menu";
-import styles from "./layout.module.css";
-import { LoginButton } from "@/components/login-button";
-import Image from "next/image";
-import { Disclaimer } from "@/components/disclaimer";
-import { Footer } from "@/components/Footer";
+import LayoutWrapper from "./layout-wrapper";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
+const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
@@ -26,24 +17,14 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
-
+}) {
   const menuItems = [
-    {
-      title: "Item 1",
-      href: "#",
-    },
-    {
-      title: "Item 2",
-      href: "#",
-    },
-    {
-      title: "Item 3",
-      href: "#",
-    },
-  ]
+    { title: "Item 1", href: "#" },
+    { title: "Item 2", href: "#" },
+    { title: "Item 3", href: "#" },
+  ];
 
   return (
     <html lang="en" suppressHydrationWarning>
@@ -58,22 +39,7 @@ export default function RootLayout({
           defaultTheme="light"
           disableTransitionOnChange
         >
-          <div className={styles.pageLayout}>
-            <div className={styles.mainMenuWrapper}>
-              <Image
-                src="/erfgoed-paspoort.svg"
-                alt="Erfgoed Paspoort"
-                width={120}
-                height={60}
-              />
-              <MainMenu items={menuItems} />
-              <LoginButton>Login</LoginButton>
-            </div>
-            {children}
-
-            <Footer className={styles.fullBleed} />
-            <Disclaimer className={styles.fullBleed} />
-          </div>
+          <LayoutWrapper menuItems={menuItems}>{children}</LayoutWrapper>
         </ThemeProvider>
       </body>
     </html>

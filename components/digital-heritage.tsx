@@ -1,8 +1,17 @@
-export default function DigitalHeritageRow({ items = DEFAULT_ITEMS }) {
+interface DigitalHeritageItemProps {
+  title: string;
+  description: string;
+}
+
+interface DigitalHeritageProps {
+  items?: DigitalHeritageItemProps[];
+}
+
+const DigitalHeritageRow = ({ items = DEFAULT_ITEMS }: DigitalHeritageProps) => {
   return (
     <section
       aria-label="Jouw digitale erfgoedervaring details"
-      className="mx-auto max-w-7xl mt-10"
+      className="mx-auto max-w-7xl mt-10 mb-[7rem]"
     >
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {items.map((item) => (
@@ -39,3 +48,5 @@ const DEFAULT_ITEMS = [
       "Met jouw erfgoedpaspoort bepaal jij zelf wat je deelt en met wie. Houd altijd controle over jouw eigen erfgoedervaring.",
   },
 ];
+
+export { DigitalHeritageRow };
