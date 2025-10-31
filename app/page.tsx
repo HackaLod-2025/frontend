@@ -1,6 +1,12 @@
+"use client";
+
 import Image from "next/image";
+import { startLogin } from "@/app/auth/authentication";
 
 export default function Home() {
+  // Define the startLogin method
+  const triggerLogin = () => startLogin();
+
   return (
     <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
       <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
@@ -59,6 +65,12 @@ export default function Home() {
             Documentation
           </a>
         </div>
+        <button
+          className="mt-6 rounded-full bg-blue-600 px-6 py-3 text-white font-semibold hover:bg-blue-700 transition-colors"
+          onClick={triggerLogin}
+        >
+          Login
+        </button>
       </main>
     </div>
   );
