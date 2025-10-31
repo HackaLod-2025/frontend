@@ -1,0 +1,21 @@
+.featuredHome {
+	display: grid;
+	gap: 1rem;
+	margin-bottom: 7rem;
+	grid-template-columns: minmax(55%, 100%) minmax(45%, 100%);
+}
+
+.featureOne {
+	padding: 10px;
+	align-items: center;
+	gap: 10px;
+	background: var(--primary-dark);
+	height: 797px;
+	border-radius: 20px;
+}
+
+.featureTwo {
+	height: 797px;
+	border-right: 20px;
+	background: url('/featured-bg.png') lightgray 50% / cover no-repeat;
+}
