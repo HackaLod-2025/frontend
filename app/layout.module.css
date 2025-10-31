@@ -1,0 +1,23 @@
+.pageLayout {
+	display: grid;
+	grid-template-columns: 1fr min(80rem, 100%) 1fr;
+}
+
+.pageLayout > * {
+	grid-column: 2;
+}
+
+.fullBleed {
+	grid-column: 1 / 4;
+	width: 100%;
+}
+
+.mainMenuWrapper {
+	display: flex;
+	gap: 1rem;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 3rem;
+	margin-bottom: 4rem;
+	padding: 0 1rem;
+}

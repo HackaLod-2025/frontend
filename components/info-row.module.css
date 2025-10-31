@@ -1,0 +1,46 @@
+/* TODO: Move these to local when possible */
+@import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
+
+.aboutHome {
+	display: grid;
+	grid-template-columns: 1fr;
+	margin-bottom: 7rem;
+	align-items: center;
+	gap: 1rem;
+}
+
+.aboutOne {
+	flex: 1 1 auto;
+}
+
+.aboutSeparator {
+	margin: 0;
+}
+
+.aboutHeading {
+	color: var(--primary-dark, #002717);
+
+	font-family: "Koulen", sans-serif;
+	font-size: 64px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 64px;
+}
+
+.aboutHeadingGradient {
+	display: block;
+	background: linear-gradient(90deg, var(--primary, #01df82) 0%, var(--primary-dark, #002717) 100%);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+@media (min-width: 48rem) {
+	.aboutHome {
+		grid-template-columns: 1fr auto 1fr;
+	}
+
+	.aboutSeparator {
+		margin: 0 3rem;
+	}
+}

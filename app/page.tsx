@@ -1,12 +1,25 @@
+"use client";
+
+import { InfoRow } from "@/components/info-row";
+import { HeroRow } from "@/components/hero-row";
+import { DigitalHeritageRow } from "@/components/digital-heritage";
+import styles from './page.module.css';
+
 export default function Home() {
   return (
     <>
-      <div className="grid auto-rows-min gap-4 md:grid-cols-3">
-        <div className="bg-muted/50 aspect-video rounded-xl" />
-        <div className="bg-muted/50 aspect-video rounded-xl" />
-        <div className="bg-muted/50 aspect-video rounded-xl" />
-      </div>
-      <div className="bg-muted/50 min-h-[100vh] flex-1 rounded-xl md:min-h-min" />
+      <HeroRow onCtaClick={() => console.log("CTA clicked")} />
+      <InfoRow description="Met Jouw Erfgoedpaspoort kun je op een unieke manier kennismaken met het rijke culturele erfgoed in jouw omgeving. Verzamel herinneringen, ontdek verhalen en bouw je eigen digitale collectie op van bijzondere plekken en objecten die ons verleden vertellen." />
+      <DigitalHeritageRow />
+      <InfoRow
+        eyebrow="Voor erfgoedinstellingen"
+        heading={
+          <>
+            Versterk uw <span className={styles.infoRowGradientOne}>digitale dienstverlening</span>
+          </>
+        }
+        description="Jouw erfgoedpaspoort is een digitaal platform dat erfgoedinstellingen helpt om bezoekers een persoonlijke erfgoedervaring te bieden. Het stelt intstellingen in staat om bezoekersgegevens veilig te beheren en gepersonaliseerde diensten aan te bieden"
+      />
     </>
   );
 }

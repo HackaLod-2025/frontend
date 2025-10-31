@@ -1,0 +1,7 @@
+.infoRowGradientOne {
+	display: block;
+	background: linear-gradient(90deg, var(--primary-dark, #03624C) 0%, var(--primary, #B7DCCD) 100%);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}

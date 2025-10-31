@@ -1,0 +1,10 @@
+.disclaimer {
+	padding: 3rem 0;
+	background-color: var(--primary-dark);
+	color: var(--color-white);
+}
+
+.disclaimerInner {
+	max-width: 80rem;
+	margin: 0 auto;
+}

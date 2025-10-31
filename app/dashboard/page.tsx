@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { getDefaultSession, handleIncomingRedirect } from "@inrupt/solid-client-authn-browser";
 import { getProfile, Profile } from "../auth/profile";
+import { Button } from "@/components/ui/button";
 
 export default function DashboardPage() {
   const [profile, setProfile] = useState<Profile | null>(null);
@@ -10,6 +11,17 @@ export default function DashboardPage() {
   const [loading, setLoading] = useState(true);
   const [sessionReady, setSessionReady] = useState(false);
   const session = getDefaultSession();
+
+  const doApiCall = async () => {
+    const data = await session.fetch('http://localhost:8080/api/sources/recommend', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ userQuery: 'architecture' })
+    });
+    console.log(data);
+  }
 
   // Restore session on mount
   useEffect(() => {
@@ -56,6 +68,8 @@ export default function DashboardPage() {
       <h1>Dashboard</h1>
       <pre>WebID: {profile.webId}</pre>
       <pre>Given Name: {profile.givenName !== null ? profile.givenName : "(not set)"}</pre>
+
+      <Button onClick={doApiCall}>Do API call</Button>
     </div>
   );
 }
