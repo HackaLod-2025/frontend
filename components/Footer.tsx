@@ -30,7 +30,7 @@ const Footer = ({ className }: { className?: string }) => {
     <footer className={`${styles.mainFooter} ${className ?? ""}`}>
       <div className={styles.mainFooterInner}>
         {footerItems.map((item: FooterMenuItem) => {
-          return <Link href={item.href}>{item.title}</Link>;
+          return <Link href={item.href} key={item.title}>{item.title}</Link>;
         })}
       </div>
     </footer>
