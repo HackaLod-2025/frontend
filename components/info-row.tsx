@@ -8,12 +8,14 @@ import { ReactNode } from "react";
 const inter = Inter({ variable: "--font-inter", weight: '300', subsets: ["latin"] });
 
 interface InfoRowProps {
+  id: string;
   eyebrow?: string;
   heading?: ReactNode;
   description: string;
 }
 
 const InfoRow = ({
+  id,
   eyebrow = "Hoe het werkt",
   heading = (
     <>

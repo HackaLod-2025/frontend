@@ -60,12 +60,17 @@
 	.heroArticle {
 		grid-column: span 7 / span 7;
 		padding-top: 24rem;
+		background: url('/bg.jpg') no-repeat center center fixed;
+		background-size: cover;
+		background-position-x: 0;
 	}
 
 	.heroAside {
 		display: flex;
 		min-height: 260px;
 		border-radius: 1rem;
+		background: url('/bg.jpg') no-repeat center center;
+		background-size: cover;
 		background-color: var(--color-zinc-900);
 		padding: 0;
 		overflow: hidden;
