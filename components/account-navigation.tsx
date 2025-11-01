@@ -1,6 +1,6 @@
-import styles from "@/app/account/preferences/page.module.css";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import styles from './account-navigation.module.css';
 
 interface AccountMenuItem {
   title: string;
@@ -17,7 +17,7 @@ const AccountNavigation = () => {
     },
     {
       title: "Mijn paspoort",
-      href: "/account/data",
+      href: "/account/termen",
     },
   ];
 

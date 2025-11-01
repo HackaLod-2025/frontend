@@ -16,7 +16,7 @@ export default function Callback() {
       if (session.info.isLoggedIn) {
         setWebId(session.info.webId ?? null);
         // Redirect to profile page after login
-        router.replace("/account");
+        router.replace("/account/termen");
       }
       setLoginComplete(true);
     });

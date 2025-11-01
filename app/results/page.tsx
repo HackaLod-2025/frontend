@@ -2,26 +2,23 @@
 
 import { AccountNavigation } from "@/components/account-navigation";
 import { MasonryWrapper } from "@/components/masonry";
+import styles from './page.module.css';
 
 export default function ResultsPage() {
-  const items = [
-    {
-      id: '1',
-      title: "Resultaat 1",
-      category: "Categorie A",
-      image: "https://placehold.co/600x400/png"
-    },
-    {
-      id: '2',
-      title: "Resultaat 2",
-      category: "Categorie A",
-      image: "https://placehold.co/600x400/png"
-    }
-  ]
+  const items = Array.from({ length: 100 }, (_, i) => {
+    const height = Math.floor(Math.random() * (800 - 400 + 1)) + 400;
+    return {
+      id: (i + 1).toString(),
+      title: `Resultaat ${i + 1}`,
+      category: `Categorie ${String.fromCharCode(65 + (i % 3))}`,
+      image: `https://placehold.co/600x${height}/png`
+    };
+  });
+
   return (
     <>
       <AccountNavigation />
-      <MasonryWrapper items={items} />
+      <MasonryWrapper items={items} className={styles.masonry} />
     </>
   );
 }

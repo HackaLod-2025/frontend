@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
+
+.termsHero {
+	margin-top: 10rem;
+	display: flex;
+	background: url('/bg.jpg') no-repeat center center fixed;
+	border-radius: 1rem;
+	min-height: 420px;
+	position: relative;
+}
+
+.heading {
+	color: var(--primary-light, #B7DCCD);
+	position: absolute;
+	font-family: "Koulen", sans-serif;
+	font-size: 72px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 64px;
+	width: 150px;
+	bottom: 2rem;
+	left: 2rem;
+}

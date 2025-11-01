@@ -16,7 +16,11 @@ export default function LayoutWrapper({
   menuItems: any[];
 }) {
   const pathname = usePathname();
-  const isBlankTemplate = pathname === "/login" || pathname === "/account/preferences" || pathname === "/results";
+  const isBlankTemplate =
+    pathname === "/login" ||
+    pathname === "/account/preferences" ||
+    pathname === "/results" ||
+    pathname === "/account/termen";
 
   return (
     <div className={styles.pageLayout}>
