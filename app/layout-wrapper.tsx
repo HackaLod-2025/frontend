@@ -16,11 +16,11 @@ export default function LayoutWrapper({
   menuItems: any[];
 }) {
   const pathname = usePathname();
-  const isLoginPage = pathname === "/login";
+  const isBlankTemplate = pathname === "/login" || pathname === "/account/preferences" || pathname === "/results";
 
   return (
     <div className={styles.pageLayout}>
-      {!isLoginPage && (
+      {!isBlankTemplate && (
         <div className={styles.mainMenuWrapper}>
           <Link href={"/"}>
             <Image
@@ -36,7 +36,7 @@ export default function LayoutWrapper({
       )}
       {children}
 
-      {!isLoginPage && (
+      {!isBlankTemplate && (
         <>
           <Footer className={styles.fullBleed} />
           <Disclaimer className={styles.fullBleed} />

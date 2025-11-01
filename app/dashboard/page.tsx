@@ -13,7 +13,7 @@ export default function DashboardPage() {
   const session = getDefaultSession();
 
   const doApiCall = async () => {
-    const data = await session.fetch('http://localhost:8080/api/sources/recommend', {
+    const data = await session.fetch('http://localhost:8080', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

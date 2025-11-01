@@ -1,0 +1,13 @@
+.masonry {
+	column-count: 4;
+	column-gap: 10px;
+	margin-top: 10rem;
+}
+
+.masonry div {
+	display: grid;
+	min-height: 300px;
+	grid-template-rows: 1fr auto;
+	margin: 0;
+	margin-bottom: 10px;
+}
