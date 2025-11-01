@@ -102,8 +102,10 @@ export default function TermenPage() {
         alert("Geen WebID gevonden in sessie.");
         return;
       }
-      // Example: save to a 'terms' folder in the user's pod
-      const podBase = session.info.webId.replace(/\/profile.*$/, "");
+      // Always save to solidcommunity.net pod
+      const podBase = session.info.webId.match(/^https:\/\/([^/]+)\/profile/)
+        ? session.info.webId.replace(/\/profile.*$/, "")
+        : "https://YOUR_USERNAME.solidcommunity.net/"; // fallback, should prompt user
       const podUrl = `${podBase}public/terms-${Date.now()}.ttl`;
       await saveTermsToPod(selectedTerms, podUrl, session.fetch);
       alert("Termen succesvol opgeslagen in Solid Pod!");

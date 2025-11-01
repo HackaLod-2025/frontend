@@ -21,9 +21,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   const menuItems = [
-    { title: "Item 1", href: "#" },
-    { title: "Item 2", href: "#" },
-    { title: "Item 3", href: "#" },
+    { title: "Digitale ervaring", href: "#" },
+    { title: "Dienstverlening", href: "#" },
+    { title: "Vragen", href: "#" },
   ];
 
   return (
