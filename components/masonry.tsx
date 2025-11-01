@@ -8,8 +8,22 @@ export interface MasonryItemProps {
   image: string;
 }
 
-const MasonryWrapper = ({ items, className }: { items: MasonryItemProps[], className?: string }) => {
-  return <Masonry  items={items} render={MasonryItem} columnGutter={8} overscanBy={5} className={className} />
+const MasonryWrapper = ({
+  items,
+  className,
+}: {
+  items: MasonryItemProps[];
+  className?: string;
+}) => {
+  return (
+    <Masonry
+      items={items}
+      render={MasonryItem}
+      columnGutter={8}
+      overscanBy={5}
+      className={className}
+    />
+  );
 };
 
 export { MasonryWrapper };

@@ -5,28 +5,25 @@ import styles from './terms-search.module.css';
 
 import { Inter } from "next/font/google";
 import { FormEvent, useRef } from "react";
-import { useRouter } from "next/navigation";
 
 const inter = Inter({ weight: '200', subsets: ['latin'] });
 
-const TermsSearch = ({ searchCallback }: { searchCallback: (event: FormEvent) => void }) => {
-  const router = useRouter();
+const TermsSearch = ({ searchCallback }: { searchCallback: (searchValue: string) => void }) => {
   const inputRef = useRef<HTMLInputElement>(null);
 
   const searchTerms = (e: FormEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    const value = inputRef.current?.value;
-    console.log(value);
-    searchCallback(e);
-  }
+    const value = inputRef.current?.value || "";
+    searchCallback(value);
+  };
 
   return (
     <form onSubmit={searchTerms} className={styles.searchForm}>
       <Label className={`${styles.searchLabel} ${inter.className}`}>Wat vind je interessant?</Label>
       <div className={styles.searchInput}>
         <Input ref={inputRef} />
-        <Button onSubmit={searchTerms}>Zoeken</Button>
+        <Button type="submit">Zoeken</Button>
       </div>
     </form>
   );

@@ -1,0 +1,23 @@
+.finishTermSelection {
+	position: sticky;
+	display: flex;
+
+	bottom: 1rem;
+	max-width: 80rem;
+	align-items: center;
+	justify-content: space-between;
+
+	background: var(--primary-dark);
+	color: var(--color-white);
+	border-radius: 12px;
+	padding: 3rem;
+}
+
+.title {
+	color: var(--color-white, #FFF);
+
+	font-size: 40px;
+	font-style: normal;
+	font-weight: 800;
+	line-height: normal;
+}

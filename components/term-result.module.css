@@ -35,6 +35,10 @@
 	height: 45px;
 }
 
+.buttonSelected {
+	background: var(--primary);
+}
+
 .title {
 	color: var(--primary-dark, #002717);
 
@@ -63,7 +67,7 @@
 	border-radius: 30px;
 	background: var(--primary-light);
 	color: var(--primary-dark, #002717);
-	font-family: Koulen;
+	font-family: Koulen, sans-serif;
 	font-size: 1rem;
 	font-style: normal;
 	font-weight: 400;
