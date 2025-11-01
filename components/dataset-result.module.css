@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
+
+.termResultContainer {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+	margin: 4rem 0;
+}
+
+.termResultHeader {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	gap: 1.5rem;
+}
+
+.termResultTitle {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 1.5rem;
+}
+
+.actions {
+	display: flex;
+	flex-direction: row;
+	gap: .2rem;
+}
+
+.button {
+	background: var(--primary-light);
+	color: var(--color-black);
+	width: 45px;
+	height: 45px;
+}
+
+.buttonSelected {
+	background: var(--primary);
+}
+
+.title {
+	color: var(--primary-dark, #002717);
+
+	font-family: Koulen, sans-serif;
+	font-size: 2rem;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 1.5rem;
+}
+
+.description {
+	color: var(--primary-dark, #002717);
+
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+}
+
+.tag {
+	display: flex;
+	padding: 10px 24px;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	border-radius: 30px;
+	background: var(--primary-light);
+	color: var(--primary-dark, #002717);
+	font-family: Koulen, sans-serif;
+	font-size: 1rem;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 32px; /* 200% */
+}

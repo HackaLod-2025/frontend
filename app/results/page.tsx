@@ -24,7 +24,7 @@ export default function ResultsPage() {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ query: 'amsterdam' })
+      body: JSON.stringify({ query: 'kerk' })
     })
     const results = await data.json();
     setImages(results);

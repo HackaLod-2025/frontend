@@ -17,6 +17,7 @@ export default function TermenPage() {
   const [searchData, setSearchData] = useState<TermsResult | null>(null);
   const [sessionReady, setSessionReady] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [resultsLoading, setResultsLoading] = useState(false);
   const [selectedTerms, setSelectedTerms] = useState<
     { prefLabel: string; source: string }[]
   >([]);
@@ -52,6 +53,7 @@ export default function TermenPage() {
     }
 
     try {
+      setResultsLoading(true);
       const sourcesResponse = await session.fetch(
         "http://localhost:8080/api/sources/recommend",
         {
@@ -75,15 +77,26 @@ export default function TermenPage() {
           body: JSON.stringify({
             sources: sourcesArray,
             query: value,
-            languages: ["en"],
+            languages: ["nl"],
           }),
         },
       );
-      const data = await response.json();
+      const data: TermsResult = await response.json();
+      const cMap = new Map<string, number>()
+      const modDataTerms = data.terms.filter(term => {
+        if (!cMap.has(term.source)) cMap.set(term.source, 0);
+        const count = cMap.get(term.source) || 0;
+        if (count >= 5) return false;
+        cMap.set(term.source, count + 1);
+        return true;
+      })
+      data.terms = modDataTerms;
       setSearchData(data);
+      setResultsLoading(false);
     } catch (error) {
       alert("Er is een fout opgetreden bij het zoeken.");
       setSearchData(null);
+      setResultsLoading(false);
     }
   };
 
@@ -125,6 +138,7 @@ export default function TermenPage() {
       <TermsSearch searchCallback={handleSearch} />
       {searchData ? (
         <SearchResults
+          resultsLoading={resultsLoading}
           results={searchData.terms}
           onSelectTerm={handleSelectTerm}
         />

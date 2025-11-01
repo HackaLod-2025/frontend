@@ -10,6 +10,7 @@ async function startLogin() {
       oidcIssuer: "https://solidcommunity.net",
       redirectUrl: new URL("/callback", window.location.href).toString(),
       clientName: "Erfgoed Paspoort",
+      tokenType: 'DPoP',
     });
   }
 }

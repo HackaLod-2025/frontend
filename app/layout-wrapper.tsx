@@ -20,7 +20,8 @@ export default function LayoutWrapper({
     pathname === "/login" ||
     pathname === "/account/preferences" ||
     pathname === "/results" ||
-    pathname === "/account/termen";
+    pathname === "/account/termen" ||
+    pathname === "/account/dataset";
 
   return (
     <div className={styles.pageLayout}>
@@ -30,7 +31,7 @@ export default function LayoutWrapper({
             <Image
               src="/erfgoed-paspoort.svg"
               alt="Erfgoed Paspoort"
-              width={120}
+              width={145}
               height={60}
             />
           </Link>
